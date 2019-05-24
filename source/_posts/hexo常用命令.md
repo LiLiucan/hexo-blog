@@ -1,6 +1,9 @@
 ---
 title: hexo常用命令
 date: 2019-04-10 14:41:55
+categories:  搭建博客
+tags: hexo
+
 ---
 
 
