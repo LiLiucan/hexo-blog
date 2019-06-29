@@ -23,7 +23,7 @@ $ hexo server
 
 官方文档: [Server](https://hexo.io/docs/server.html)
 
-### 生成今天文件
+### 生成静态文件
 
 ``` bash
 $ hexo generate
