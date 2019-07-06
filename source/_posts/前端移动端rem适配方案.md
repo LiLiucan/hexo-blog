@@ -5,10 +5,12 @@ categories: 前端
 tags: 移动端适配
 ---
 
+### 适配方案选择
 参考网易移动端适配方案,使用rem方案做页面适配，以750px设计稿为基准适配：
 
 
-```
+### 适配代码
+```javascript
 <script>
   (function () {
     function resize() {
@@ -26,6 +28,16 @@ tags: 移动端适配
 </script>
 ```
 
+### 示例代码
+750px设计稿px单位可以直接换算为rem(1rem=100px)
+```css
+.test {
+  width: 100%;
+  height: 1rem; 
+}
+```
+
+### 其他类似适配方案对比
 淘宝和网易移动端rem适配方案对比：
 
 https://juejin.im/post/5b346e8f5188251e1d39bd09?utm_source=gold_browser_extension
