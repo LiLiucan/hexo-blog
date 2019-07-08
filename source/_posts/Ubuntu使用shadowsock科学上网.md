@@ -40,10 +40,28 @@ $ ssserver --version
 $ vim /etc/shadowsocks.json
 ```
 - 添加如下配置:
-```javascript
+```json
 {
     "server":"45.32.156.231",  // 这里修改为自己的ip
     "server_port":3389, // 可以设置为其他端口,3389是windows远程桌面端口,一般不会被封
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"mypassword", // 这里修改为自己的密码
+    "timeout":300,
+    "method":"rc4-md5" // 可以使用其他的加密方式
+}
+
+```
+- 多用户配置
+只需将上述配置中的server_port替换为port_password，最终配置如下：
+
+```json
+{
+    "server":"45.32.156.231",  // 这里修改为自己的ip
+    "port_password": {
+        "8080": "passwd1",
+        "8081": "passwd2"
+    },
     "local_address": "127.0.0.1",
     "local_port":1080,
     "password":"mypassword", // 这里修改为自己的密码
