@@ -38,8 +38,8 @@
   <div class="markdown-body">
     <%- page.content %>
   </div>
-  <% if(theme.leancloud.comment){ %>
-    <%- partial("_partial/comment") %>
+  <% if(theme.gitalk.enable){ %>
+    <%- partial("_partial/comment-gitalk") %>
   <% } %> 
 
 </div>
@@ -51,8 +51,8 @@
       <%- page.content %>
     </div>
     
-    <% if(theme.leancloud.comment){ %>
-      <%- partial("_partial/comment") %>
+    <% if(theme.gitalk.enable){ %>
+      <%- partial("_partial/comment-gitalk") %>
     <% } %> 
   </div>
 <% } %>
@@ -79,8 +79,8 @@
     <% } %>
   </nav>
 
-  <% if(theme.leancloud.comment){ %>
-    <%- partial("_partial/comment") %>
+  <% if(theme.gitalk.enable){ %>
+    <%- partial("_partial/comment-gitalk") %>
   <% } %> 
 
   <% if(theme.leancloud.timer){ %>

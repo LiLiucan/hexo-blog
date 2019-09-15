@@ -36,6 +36,10 @@ const getRealPath = pathname => {
         浏览 : <span class="article-timer" data-identity="<%- getRealPath(page.path) %>"></span>
       </span>
     <% } %>
+    <span>
+      issueNumber : 
+      <span id="issueNumber"><%- page.issueNumber %></span>
+    </span>
   </div>
 
   <% if(theme.player && page.playlist){ %>

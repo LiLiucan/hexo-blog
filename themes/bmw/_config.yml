@@ -77,7 +77,7 @@ leancloud:
   appid: Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz # 填写您的appid
   appkey: WaR7nrzhliHj9aVwdQzkdlGd # 填写您的appkey
   comment: false # 是否开启评论系统
-  timer: false # 是否开启文章统计
+  timer: true # 是否开启文章统计
 
 # 导航栏头部名称
 nav_name:  李留灿的博客
@@ -115,7 +115,6 @@ nav:
     #     name: "知乎"
     #     path: "https://www.zhihu.com/people/godbmw/activities"
     #     blank: true
-
 # 友链详细信息：支持多个友链
 friends:
   -
@@ -123,3 +122,18 @@ friends:
     avatar: /images/avatar.jpg # 头像链接
     site: https://liliucan.github.com # 站点地址
     meta:  李留灿# 站点描述
+
+
+gitalk:
+  enable: true # 是否启动
+#   ClientID: 7bfba887c4d0e748b724 # 之前的Client ID
+#   ClientSecret: 707587ccc594d417674a07a9f7083687f5168bac # 之前的Client Secret
+#   repo: hexo-blog # 留言板内容需要存放的仓库名称
+#   owner: Liliucan # 你 github 的帐号 eg: www.github.com/zhongxia245 ,帐号就是245
+#   adminUser: Liliucan # 管理员用户
+#   labels: # issue 的标签
+#     - gitalk
+#   perPage: 15 # 每页展示条数
+#   pagerDirection: last # 排序方式是从旧到新（first）还是从新到旧（last）
+#   createIssueManually: false #如果当前页面没有相应的 isssue ，且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
+#   distractionFreeMode: false #是否启用快捷键(cmd|ctrl + enter) 提交评论.
