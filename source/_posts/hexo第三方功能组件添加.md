@@ -3,6 +3,7 @@ title: hexo第三方功能组件添加及配置
 date: 2019-04-14 12:56:55
 categories: 搭建博客
 tags: hexo
+issueNumber: 3
 ---
 
 

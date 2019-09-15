@@ -3,6 +3,7 @@ title: 前端移动端rem适配方案
 date: 2019-06-14 10:17:57
 categories: 前端
 tags: 移动端适配
+issueNumber: 1
 ---
 
 ### 适配方案选择

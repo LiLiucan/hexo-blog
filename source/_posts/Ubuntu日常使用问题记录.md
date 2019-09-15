@@ -3,6 +3,7 @@ title: Ubuntu日常使用问题记录
 date: 2019-06-29 22:24:02
 categories:  Linux
 tags:  Ubuntu及树莓派
+issueNumber: 5
 ---
 
 ### 截图快捷键

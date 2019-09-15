@@ -3,6 +3,7 @@ title: Ubuntu系统环境下shadowsock安装和使用
 date: 2019-07-06 00:41:00
 categories: 常用服务配置
 tags:  翻墙
+issueNumber: 6
 ---
 
 # 整体解决方案
