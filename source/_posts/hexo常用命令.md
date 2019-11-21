@@ -15,10 +15,18 @@ $ hexo new "My New Post"
 
 官方文档: [Writing](https://hexo.io/docs/writing.html)
 
+### 创建一个博客草稿
+
+``` bash
+$ hexo new draft "My New Post Draft"
+```
+
 ### 启动服务
 
 ``` bash
 $ hexo server
+或
+$ hexo server --draft # 可以预览草稿
 ```
 
 官方文档: [Server](https://hexo.io/docs/server.html)
