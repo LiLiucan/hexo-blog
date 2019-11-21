@@ -80,7 +80,7 @@ leancloud:
   timer: true # 是否开启文章统计
 
 # 导航栏头部名称
-nav_name:  李留灿的博客
+nav_name:  前端狗学后端
 
 # 导航栏选项
 # blank: 是否在新页面打开，默认 false
@@ -121,7 +121,7 @@ friends:
     nickname: GodBMW # 昵称
     avatar: /images/avatar.jpg # 头像链接
     site: https://liliucan.github.com # 站点地址
-    meta:  李留灿# 站点描述
+    meta:  前端狗学后端# 站点描述
 
 
 gitalk:
