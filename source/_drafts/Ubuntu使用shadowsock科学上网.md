@@ -6,33 +6,31 @@ tags:  翻墙
 issueNumber: 6
 ---
 
-# 整体解决方案
-[翻墙方案架构图](https://github.com/LiLiucan/drawio-charts/blob/master/shadowsocks.png)
+# 非VPS翻墙
+推荐使用板瓦工的[justmysocks](http://justmysocks1.net)服务，这货默认会给5个ip，被封还可以换，只是有些贵。与VPS的差别就是这货只能翻墙，VPS还可以用来搭一些服务。
+
+# VPS翻墙解决方案
+[VPS翻墙方案架构图](https://github.com/LiLiucan/drawio-charts/blob/master/shadowsocks.png)
 我目前是使用vps搭建shadowscoks服务，局域网设备通过代理到安装有shadowsocks客户端的树莓派翻墙，移动设备可以直接安装shadowsocks客户端翻墙，也可以使用树莓派代理。
 
-关于vps,我之前用过[板瓦工](https://bwh88.net)，但是ip被封了，换ip要收费，遂放弃。后来用过板瓦工的[justmysocks](http://justmysocks1.net)服务，这货默认会给5个ip，被封还可以换，但是感觉还是有点贵，亦放弃。后来还是用了[vultr](https://vultr.com)的vps。优点是最近有活动，新用户注册即送50美元，充值10美元还有优惠，用3.5美元/月的机器，这样基本上花60人民币可以用一年多。缺点是日本 美国 新加坡节点基本上没有还没被墙的ip，只好用欧洲节点，我用的是德国的节点，用起来还好。
+关于VPS，我个人用过[板瓦工](https://bwh88.net)和[vultr](https://vultr.com)两个服务。搬瓦工的好处是有便宜的机器，缺点是如果ip被封，换ip的话是需要付费的。当然也可以不换ip那就有可能要等俩月看ip会不会解封了。vultr的特点：以充值的方式付费，不使用是不扣费的；可以添加多个VPS实例，当然也是按每个VPS实例收费；多个实例对于翻墙的好处就是不怕封ip，ip被封就放弃当前实例，在添加一个就行了。但是vultr相对搬瓦工来说还是要贵些。
 
 # 服务器配置
+服务端需要安装shadowsocks server,之前安装shadowsocks主要有python安装和使用apt安装两种方式，但是目前两种方式都已失效。所以，我推荐使用docker安装或者使用snap安装。
 
-###  安装python-pip
+## 使用docker安装shadowsocks
+参考：https://github.com/LiLiucan/docker-shadowsocks
+docker的安装和使用自行学习，这里不再介绍
+
+## 使用snap安装shadowsocks
+### 安装snap
 ```shell
-$ apt install python-pip
-或
-$ apt install python3-pip
+$ sudo apt install snap
 ```
 
-
-### 使用pip3安装shadowsocks
-- 安装
+### 安装shadowsocks
 ```shell
-$ pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip
-或
-$ pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip
-```
-
-- 确认是否安装成功
-```shell
-$ ssserver --version
+$ sudo snap install shadowsocks
 ```
 
 ### 编辑配置文件
