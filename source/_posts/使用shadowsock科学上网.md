@@ -15,7 +15,9 @@ issueNumber: 6
 [VPS 翻墙方案架构图](https://github.com/LiLiucan/drawio-charts/blob/master/shadowsocks.png)
 我目前是使用 vps 搭建 shadowscoks 服务，局域网设备通过代理到安装有 shadowsocks 客户端的树莓派翻墙，移动设备可以直接安装 shadowsocks 客户端翻墙，也可以使用树莓派代理。
 
-关于 VPS，我个人用过[板瓦工](https://bwh88.net)和[vultr](https://vultr.com)两个服务。搬瓦工的好处是有便宜的机器，缺点是如果 ip 被封，换 ip 的话是需要付费的。当然也可以不换 ip 那就有可能要等俩月看 ip 会不会解封了。vultr 的特点：以充值的方式付费，不使用是不扣费的；可以添加多个 VPS 实例，当然也是按每个 VPS 实例收费；多个实例对于翻墙的好处就是不怕封 ip，ip 被封就放弃当前实例，在添加一个就行了。但是 vultr 相对搬瓦工来说还是要贵些。
+关于 VPS，国外的我个人用过[板瓦工](https://bwh88.net)和[vultr](https://vultr.com)两个服务。搬瓦工的好处是有便宜的机器，缺点是如果 ip 被封，换 ip 的话是需要付费的。当然也可以不换 ip 那就有可能要等俩月看 ip 会不会解封了。vultr 的特点：以充值的方式付费，不使用是不扣费的；可以添加多个 VPS 实例，当然也是按每个 VPS 实例收费；多个实例对于翻墙的好处就是不怕封 ip，ip 被封就放弃当前实例，在添加一个就行了。但是 vultr 相对搬瓦工来说还是要贵些。
+
+国内的最近用了[aliyun 的入门级配置的应用服务器](https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=rr3a2o0r)，可以选择使用香港节点和新加坡节点。之前一直觉得阿里云的贵些，但是现在发现阿里云已经比上面说的国外的便宜了。每月 24 块钱（香港节点和新加坡节点）。
 
 # 服务器配置，系统环境为 Ubuntu
 
@@ -24,7 +26,40 @@ issueNumber: 6
 ## 使用 docker 安装 shadowsocks
 
 参考：https://github.com/LiLiucan/docker-shadowsocks
-docker 的安装和使用自行学习，这里不再介绍
+这里不再介绍更详细的关于 docker 的知识，仅列出常用命令
+
+1. 安装 docker
+
+   ```shell
+   sudo apt install docker
+   ```
+
+2. 安装并运行 shadowsocks 服务
+
+   ```shell
+   docker run -d -p 1984:1984 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb
+   ```
+
+   > 注意：1984 为 shadowsocks 服务端口，可以自定义。 \$PASSWORD 为 shadowsocks 服务密码，可以自定义
+
+3. 停止 shadowsocks 服务
+   查看当前运行的 docker 容器
+
+   ```shell
+   docker container ls
+   ```
+
+   上述命令运行后可以看到当前运行的 docker 容器列表，找到 shaowsocks 容器，并复制 CONTAINER ID。
+   使用 CONTAINER ID 停止该 shadowsocks docker 容器
+
+   ```shell
+   docker container stop $CONTAINER_ID(这里替换为真实的CONTAINER ID)
+   ```
+
+4. 重新运行 shadowsocks docker 容器
+   ```shell
+   docker container start $CONTAINER_ID(这里替换为真实的CONTAINER ID)
+   ```
 
 ## 使用 snap 安装 shadowsocks
 
