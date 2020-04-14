@@ -18,7 +18,7 @@ sudo apt install postgresql postgresql-contrib
 sudo -u postgres psql -c "SELECT version();"
 ```
 
-## 进入 PostgresQL 命令行
+## 进入命令行交互模式
 
 切换用户
 
@@ -44,7 +44,7 @@ sudo -u postgres psql
 \q
 ```
 
-### 创建新的角色（用户）
+## 创建新的用户及数据库，并赋权
 
 - 如果当前系统登录用户是 postgres,输入以下命令：
 
@@ -60,16 +60,23 @@ sudo su - postgres -c "createdb johndb"
 
 - 将新创建的数据权限赋予指定的数据库用户
 
-打开 PostgreSQL shell
+用管理员账户打开 PostgreSQL shell
 
 ```bash
 sudo -u postgres psql
 ```
 
-运行如下命令：
+切换到指定数据库
 
 ```bash
-grant all privileges on database johndb to john;
+\c johndb
+```
+
+赋权
+
+```bash
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO john; // 赋予所有表的所有权限给john
+GRANT ALL PRIVILEGES ON tuser TO john; // 赋予用户john tuser表的所有权限
 ```
 
 - 修改用户密码
@@ -83,7 +90,7 @@ sudo -u postgres psql
 运行如下 sql 命令：
 
 ```bash
-ALTER USER postgres WITH PASSWORD ‘postgres’;
+ALTER USER jons WITH PASSWORD 'john-password';
 ```
 
 ## 开启远程访问
